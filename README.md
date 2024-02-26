@@ -1,5 +1,4 @@
 # Config Server
 ## Как запустить
 * Добавить файл .env в директорию hs-config (он содержит токен доступа к приватному репозиторию, попросите меня, я скину)
-* При изменении сначала нужно выполнить команду mvn clean package
-* Выполнить docker-compose up
+* Выполнить "mvn clean package" и "docker-compose up"
