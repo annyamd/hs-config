@@ -1,9 +1,15 @@
 services:
-  config-service:
-    container_name: config-service
+  configuration-server:
+    container_name: configuration-server
     env_file: .env
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "${APP_PORT}:${APP_PORT}"
+      - "${APP_PORT}:8888"
+    networks:
+      hls-lab-network:
+
+networks:
+  hls-lab-network:
+    external: true

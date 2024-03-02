@@ -1,12 +1,24 @@
 server:
   port: ${APP_PORT}
+#  port: 8888
+
 spring:
+  application:
+    name: configuration-server
+
+  profiles:
+    active: LOCAL
+
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/annyamd/hs-config-repo.git
+          uri: ${GIT_URL}
           username: ${GIT_USER}
           password: ${GIT_TOKEN}
-          default-label: master
+          default-label: main
           clone-on-start: true
+
+logging:
+  pattern:
+    dateformat: HH-mm-ss
